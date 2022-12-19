@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.facebook {
+  margin-top: 5rem;
+}
+
+.header {
+  /* text-align: center; */
+  line-height: 1.8rem;
+  border-bottom: 1px solid #ccd0d5;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex h1 {
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+}
+
+i {
+  font-size: x-large;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.header p {
+  color: rgb(105, 100, 100);
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  width: 432px;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  /* box-sizing: border-box; */
+  /* border: 1px solid #ccd0d5; */
+  box-shadow: 0px 4px 6px 2px #aaa;
+}
+
+form {
+  position: relative;
+}
+
+form input {
+  padding: 0.6rem;
+  background-color: #f5f6f7;
+  border: 1px solid #ccd0d5;
+  border-radius: 5px;
+  width: 43.7%;
+  margin: 2px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.number {
+  width: 94.2%;
+}
+
+.pass {
+  width: 94.2%;
+}
+
+.birthday select {
+  width: 32%;
+  padding: 0.6rem;
+  margin: 0.36%;
+  background: #fff;
+  border: #ccd0d5 1px solid;
+}
+
+.birthday-1 {
+  display: flex;
+  color: rgb(87, 85, 85);
+}
+
+.birthday i {
+  padding-left: 5px;
+  font-size: small;
+}
+
+.birthday-1 h6 {
+  font-size: 10px;
+  margin-left: 3px;
+}
+
+.gender {
+  display: flex;
+}
+
+.gender > div {
+  flex: 1;
+  border: #ccd0d5 1px solid;
+  margin-right: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.small {
+  color: rgb(87, 85, 85);
+  font-size: 12px;
+}
+
+span {
+  color: blue;
+}
+
+.btn {
+  width: 100%;
+  /* background: #333; */
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.btn a {
+  margin-top: 1rem;
+  margin-right: 2rem;
+  padding: 0.5rem 4rem;
+  background: rgb(14, 168, 14);
+  text-decoration: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.select {
+  margin-bottom: 1rem;
+}
+
+.last {
+  margin-top: 1rem;
+}
+
+.val {
+  color: red;
+  /* position: absolute; */
+  left: 0;
+  top: 110px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
