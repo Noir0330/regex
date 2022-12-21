@@ -22,24 +22,26 @@
             </div>
             <p>It's quick and easy</p>
           </div>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            onkeydown="validation()"
-          />
-          <span class="val"></span>
-          <!-- 1 -->
-          <br />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            onkeydown="validationEmail()"
-          />
-          <span class="val"></span>
+          <div class="flex2">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Your name"
+              onkeydown="validation()"
+            />
+            <span class="val"></span>
+            <!-- 1 -->
+            <br />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your email"
+              onkeydown="validationEmail()"
+            />
+            <span class="val"></span>
+          </div>
           <!-- 2 -->
           <input
             class="number"
@@ -105,7 +107,7 @@
             </p>
           </div>
           <div class="btn">
-            <a href="https://www.facebook.com/" target="_blank">Sign Up</a>
+            <button class="btn1">Dar</button>
           </div>
         </form>
       </div>
@@ -113,55 +115,74 @@
 
     <script>
       var errors = document.querySelectorAll(".val");
+      var arr = [];
 
       function validation() {
         let name = document.getElementById("name").value;
+        let nameStyle = document.getElementById("name");
         let email = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,63})$/;
         let userNameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
 
         if (name.match(userNameRegex)) {
-          errors[0].textContent = "nice";
+          nameStyle.style.color = "green";
+          arr.push(name);
         } else {
-          errors[0].textContent = "Error";
+          nameStyle.style.color = "red";
         }
       }
 
       function validationEmail() {
         let emailValue = document.getElementById("email").value;
+        let emailStyle = document.getElementById("email");
 
         let emailRegex = /^[^ ]+@[^ ]+\.[A-Z]{2,3}$/;
         if (emailValue.match(emailRegex)) {
           // errors[1].classList.remove("val");
-          errors[1].textContent = "Correct";
+          emailStyle.style.color = "green";
         } else {
-          errors[1].textContent = "Error";
+          emailStyle.style.color = "red";
+          arr.push(emailValue);
         }
       }
 
       function validationNumber() {
         let numberValue = document.querySelector(".number").value;
+        let numberStyle = document.querySelector(".number");
 
         let numberRegex = /^[0-9]{7}$/;
         if (numberValue.match(numberRegex)) {
           // errors[1].classList.remove("val");
-          errors[2].textContent = "Correct";
+          numberStyle.style.color = "green";
+          arr.push(numberValue);
         } else {
-          errors[2].textContent = "Error";
+          numberStyle.style.color = "red";
         }
       }
 
       function validationPassword() {
         let passwordValue = document.querySelector(".pass").value;
+        let passwordStyle = document.querySelector(".pass");
 
         let passwordRegex =
           /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$^&*()_-]).{8,18}$/;
         if (passwordValue.match(passwordRegex)) {
           // errors[1].classList.remove("val");
-          errors[3].textContent = "Correct";
+          passwordStyle.style.color = "green";
+          arr.push(passwordValue);
         } else {
-          errors[3].textContent = "Error";
+          passwordStyle.style.color = "red";
         }
       }
+      let id = 0;
+      // arr = [name, emailValue, numberValue, passwordValue];
+      document.querySelector(".btn1").addEventListener("click", () => {
+        id++;
+        let arrStr = JSON.stringify(arr);
+        localStorage.setItem(id, arrStr);
+        arr = [];
+
+        document.addEventListener("load");
+      });
     </script>
   </body>
 </html>
